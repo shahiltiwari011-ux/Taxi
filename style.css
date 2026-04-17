@@ -1,0 +1,108 @@
+/* Base Styles */
+html { scroll-behavior: smooth; }
+body { 
+    font-family: 'Manrope', sans-serif; 
+    background: #0f172a; /* Fallback for smooth loading */
+    background: radial-gradient(circle at top, rgba(245,166,35,.08), transparent 25%), 
+                linear-gradient(180deg, #0f172a 0%, #111c31 40%, #0b1220 100%); 
+    color: #f8fafc; 
+}
+
+/* Design Tokens & Utilities */
+.glass { 
+    background: rgba(30, 41, 59, 0.4); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+}
+.nav-solid { 
+    background: rgba(15, 23, 42, 0.9); 
+    box-shadow: 0 10px 30px -10px rgba(2, 6, 23, 0.5); 
+    backdrop-filter: blur(16px);
+}
+
+/* Background Elements */
+.road-overlay { 
+    position: absolute; 
+    inset: 0; 
+    opacity: 0.15; 
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900'%3E%3Cpath d='M580 0h280l240 900H340L580 0Z' fill='%231e293b'/%3E%3Cpath d='M705 0h30v70h-30Zm0 120h30v70h-30Zm0 120h30v70h-30Zm0 120h30v70h-30Zm0 120h30v70h-30Zm0 120h30v70h-30Zm0 120h30v70h-30Z' fill='%23f5a623' fill-opacity='0.6'/%3E%3C/svg%3E"); 
+    background-size: cover; 
+    background-position: center; 
+    pointer-events: none; 
+    z-index: 0;
+}
+
+/* Animations & Transitions */
+.section-title::after { 
+    content: ''; 
+    display: block; 
+    width: 60px; 
+    height: 4px; 
+    margin-top: 15px; 
+    border-radius: 999px; 
+    background: linear-gradient(90deg, #f5a623, transparent); 
+}
+.hover-glow { 
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+.hover-glow:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 40px -10px rgba(245, 166, 35, 0.15); 
+    border-color: rgba(245, 166, 35, 0.3); 
+}
+
+/* Typewriter Cursor */
+.type-cursor::after { 
+    content: ''; 
+    display: inline-block; 
+    width: 3px;
+    height: 1em;
+    margin-left: 6px; 
+    background-color: #f5a623; 
+    animation: blink 1s step-end infinite; 
+    vertical-align: middle;
+}
+@keyframes blink { from, to { opacity: 1; } 50% { opacity: 0; } }
+
+/* Interactive Hover States */
+.floating-label input:focus + label, 
+.floating-label input:not(:placeholder-shown) + label, 
+.floating-label textarea:focus + label, 
+.floating-label textarea:not(:placeholder-shown) + label { 
+    transform: translateY(-1.6rem) scale(.9); 
+    color: #f5a623; 
+}
+.floating-label label { 
+    transition: all 0.3s ease; 
+    transform-origin: left; 
+}
+
+/* Masonry Layout */
+.masonry-grid { grid-auto-rows: 15px; }
+.row-span-12 { grid-row: span 12; }
+.row-span-14 { grid-row: span 14; }
+.row-span-16 { grid-row: span 16; }
+.row-span-18 { grid-row: span 18; }
+
+/* Car SVG Styling */
+.car-svg {
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+.car-body {
+    fill: #f5a623;
+}
+.car-window {
+    fill: #0f172a;
+    fill-opacity: 0.6;
+}
+
+/* Swiper Customs */
+.swiper-pagination-bullet { background: #64748b !important; opacity: 1 !important; }
+.swiper-pagination-bullet-active { background: #f5a623 !important; width: 24px !important; border-radius: 12px !important; }
+
+/* Utility Classes */
+.bg-brand { background-color: #f5a623 !important; }
+.text-brand { color: #f5a623 !important; }
+.border-brand { border-color: #f5a623 !important; }
+.text-ink { color: #0f172a !important; }
