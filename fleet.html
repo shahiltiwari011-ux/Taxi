@@ -37,62 +37,86 @@
         <a href="contact.html" class="transition hover:text-brand">Contact</a>
         <a href="https://api.whatsapp.com/send?phone=7999515625" class="rounded-full bg-brand px-6 py-3 font-bold text-ink">Book Now</a>
       </nav>
-      <button id="menu-toggle" class="glass flex h-12 w-12 items-center justify-center rounded-full lg:hidden"><svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+      <button id="menu-toggle" class="glass inline-flex h-12 w-12 items-center justify-center rounded-full text-mist lg:hidden" aria-label="Open menu"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
+    <div id="mobile-menu-backdrop" class="pointer-events-none fixed inset-0 z-40 bg-slate-950/50 opacity-0 transition duration-300 lg:hidden"></div>
+    <aside id="mobile-menu" class="glass fixed right-0 top-0 z-50 h-full w-[80%] max-w-sm translate-x-full border-l border-white/10 p-8 transition-transform duration-300 lg:hidden text-mist">
+      <div class="mb-10 flex items-center justify-between">
+        <p class="font-heading text-xl font-extrabold text-brand">SiyaRam Taxi</p>
+        <button id="menu-close" class="rounded-full border border-white/10 p-2 text-slate-200"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div class="flex flex-col flex-grow">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <a class="mobile-link" href="fleet.html">Fleet</a>
+        <a class="mobile-link" href="destinations.html">Destinations</a>
+        <a class="mobile-link" href="contact.html">Contact</a>
+      </div>
+      <a href="contact.html" class="mt-8 block w-full rounded-full bg-brand py-4 text-center font-bold text-ink">Book Your Ride</a>
+    </aside>
   </header>
 
-  <main class="pt-32 pb-24 mx-auto max-w-7xl px-4">
-    <div class="text-center mb-16">
-      <h1 class="font-heading text-4xl font-extrabold sm:text-6xl mb-6">Explore Our Fleet</h1>
-      <p class="text-xl text-slate-400 max-w-2xl mx-auto">From economy sedans to luxury SUVs, we have the perfect vehicle for every group size and journey type.</p>
+  <main class="pt-24 sm:pt-32 pb-16 sm:pb-24 mx-auto max-w-7xl px-5">
+    <div class="text-center mb-10 sm:mb-16">
+      <h1 class="font-heading text-2xl sm:text-4xl font-extrabold lg:text-6xl mb-4 sm:mb-6" style="overflow-wrap:break-word;word-break:break-word;">Explore Our Fleet</h1>
+      <p class="text-base sm:text-xl text-slate-400 max-w-2xl mx-auto">From economy sedans to luxury SUVs, we have the perfect vehicle for every group size and journey type.</p>
     </div>
 
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-5 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
       <!-- Sedan -->
-      <div data-aos="fade-up" class="glass group p-8 rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500">
-        <div class="bg-brand/10 text-brand px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-6">Popular Choice (4+1)</div>
-        <h3 class="text-3xl font-extrabold mb-2">Swift Dzire</h3>
-        <p class="text-slate-400 mb-8">The most comfortable and economical choice for small families and business trips.</p>
-        <div class="space-y-4 mb-10 border-t border-white/5 pt-8">
-            <div class="flex justify-between text-sm"><span class="text-slate-500">Capacity</span><span>4 Passengers</span></div>
-            <div class="flex justify-between text-sm"><span class="text-slate-500">Luggage</span><span>2 Large Bags</span></div>
-            <div class="flex justify-between text-sm"><span class="text-slate-500">Type</span><span>AC Sedan</span></div>
+      <div data-aos="fade-up" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500">
+        <div class="bg-brand/10 text-brand px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Popular Choice (4+1)</div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">Swift Dzire</h3>
+        <p class="text-slate-400 text-sm mb-6 sm:mb-8">The most comfortable and economical choice for small families and business trips.</p>
+        <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 overflow-hidden group-hover:shadow-[0_0_30px_rgba(245,166,35,0.15)] transition duration-500">
+          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Swift Dzire" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
         </div>
-        <a href="contact.html" class="block text-center py-4 bg-white/5 rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300">Check Price</a>
+        <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-10 border-t border-white/5 pt-6 sm:pt-8 text-sm">
+            <div class="flex justify-between"><span class="text-slate-500">Capacity</span><span>4 Passengers</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Luggage</span><span>2 Large Bags</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Type</span><span>AC Sedan</span></div>
+        </div>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Check Price</a>
       </div>
 
       <!-- Ertiga -->
-      <div data-aos="fade-up" data-aos-delay="100" class="glass group p-8 rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500">
-        <div class="bg-indigo-500/10 text-indigo-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-6">Family MVP (6+1)</div>
-        <h3 class="text-3xl font-extrabold mb-2">Maruti Ertiga</h3>
-        <p class="text-slate-400 mb-8">Extra space for everyone. Best for airport transfers and large families.</p>
-        <div class="space-y-4 mb-10 border-t border-white/5 pt-8">
-            <div class="flex justify-between text-sm"><span class="text-slate-500">Capacity</span><span>6 Passengers</span></div>
-            <div class="flex justify-between text-sm"><span class="text-slate-500">Luggage</span><span>3 Large Bags</span></div>
-            <div class="flex justify-between text-sm"><span class="text-slate-500">Type</span><span>AC SUV/MPV</span></div>
+      <div data-aos="fade-up" data-aos-delay="100" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500">
+        <div class="bg-indigo-500/10 text-indigo-400 px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Family MVP (6+1)</div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">Maruti Ertiga</h3>
+        <p class="text-slate-400 text-sm mb-6 sm:mb-8">Extra space for everyone. Best for airport transfers and large families.</p>
+        <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 overflow-hidden group-hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] transition duration-500">
+          <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c15d?auto=format&fit=crop&q=80&w=800" alt="Maruti Ertiga" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
         </div>
-        <a href="contact.html" class="block text-center py-4 bg-white/5 rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300">Check Price</a>
+        <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-10 border-t border-white/5 pt-6 sm:pt-8 text-sm">
+            <div class="flex justify-between"><span class="text-slate-500">Capacity</span><span>6 Passengers</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Luggage</span><span>3 Large Bags</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Type</span><span>AC SUV/MPV</span></div>
+        </div>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Check Price</a>
       </div>
 
       <!-- Innova -->
-      <div data-aos="fade-up" data-aos-delay="200" class="glass group p-8 rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500">
-        <div class="bg-emerald-500/10 text-emerald-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-6">Premium Travel (7+1)</div>
-        <h3 class="text-3xl font-extrabold mb-2">Innova Crysta</h3>
-        <p class="text-slate-400 mb-8">Luxury redefined. Travel in supreme comfort with captain seats and premium AC.</p>
-        <div class="space-y-4 mb-10 border-t border-white/5 pt-8">
-            <div class="flex justify-between text-sm"><span class="text-slate-500">Capacity</span><span>7 Passengers</span></div>
-            <div class="flex justify-between text-sm"><span class="text-slate-500">Luggage</span><span>4 Large Bags</span></div>
-            <div class="flex justify-between text-sm"><span class="text-slate-500">Type</span><span>Luxury SUV</span></div>
+      <div data-aos="fade-up" data-aos-delay="200" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500">
+        <div class="bg-emerald-500/10 text-emerald-400 px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Premium Travel (7+1)</div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">Innova Crysta</h3>
+        <p class="text-slate-400 text-sm mb-6 sm:mb-8">Luxury redefined. Travel in supreme comfort with captain seats and premium AC.</p>
+        <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 overflow-hidden group-hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition duration-500">
+          <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcbaad?auto=format&fit=crop&q=80&w=800" alt="Innova Crysta" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
         </div>
-        <a href="contact.html" class="block text-center py-4 bg-white/5 rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300">Check Price</a>
+        <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-10 border-t border-white/5 pt-6 sm:pt-8 text-sm">
+            <div class="flex justify-between"><span class="text-slate-500">Capacity</span><span>7 Passengers</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Luggage</span><span>4 Large Bags</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Type</span><span>Luxury SUV</span></div>
+        </div>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Check Price</a>
       </div>
     </div>
   </main>
 
-  <footer class="border-t border-white/5 bg-slate-950/80 py-20 text-center">
+  <footer class="border-t border-white/5 bg-slate-950/80 py-12 sm:py-20 text-center px-5">
     <h2 class="font-heading text-2xl font-extrabold text-brand mb-4">SiyaRam Taxi Services</h2>
-    <p class="text-slate-500 text-sm mb-8">© 2024 SiyaRam Taxi Services. Satna, MP.</p>
-    <div class="flex justify-center gap-6">
+    <p class="text-slate-500 text-sm mb-6 sm:mb-8">© 2024 SiyaRam Taxi Services. Satna, MP.</p>
+    <div class="flex justify-center gap-6 text-sm flex-wrap">
       <a href="index.html" class="text-slate-400 hover:text-white transition">Home</a>
       <a href="about.html" class="text-slate-400 hover:text-white transition">About</a>
       <a href="destinations.html" class="text-slate-400 hover:text-white transition">Destinations</a>

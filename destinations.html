@@ -37,83 +37,98 @@
         <a href="contact.html" class="transition hover:text-brand">Contact</a>
         <a href="https://api.whatsapp.com/send?phone=7999515625" class="rounded-full bg-brand px-6 py-3 font-bold text-ink">Book Now</a>
       </nav>
-      <button id="menu-toggle" class="glass flex h-12 w-12 items-center justify-center rounded-full lg:hidden"><svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+      <button id="menu-toggle" class="glass inline-flex h-12 w-12 items-center justify-center rounded-full text-mist lg:hidden" aria-label="Open menu"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
+    <div id="mobile-menu-backdrop" class="pointer-events-none fixed inset-0 z-40 bg-slate-950/50 opacity-0 transition duration-300 lg:hidden"></div>
+    <aside id="mobile-menu" class="glass fixed right-0 top-0 z-50 h-full w-[80%] max-w-sm translate-x-full border-l border-white/10 p-8 transition-transform duration-300 lg:hidden text-mist">
+      <div class="mb-10 flex items-center justify-between">
+        <p class="font-heading text-xl font-extrabold text-brand">SiyaRam Taxi</p>
+        <button id="menu-close" class="rounded-full border border-white/10 p-2 text-slate-200"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div class="flex flex-col flex-grow">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <a class="mobile-link" href="fleet.html">Fleet</a>
+        <a class="mobile-link" href="destinations.html">Destinations</a>
+        <a class="mobile-link" href="contact.html">Contact</a>
+      </div>
+      <a href="contact.html" class="mt-8 block w-full rounded-full bg-brand py-4 text-center font-bold text-ink">Book Your Ride</a>
+    </aside>
   </header>
 
-  <main class="pt-32 pb-24 mx-auto max-w-7xl px-4">
-    <div class="text-center mb-16">
-      <p class="text-brand font-bold uppercase tracking-[0.3em] text-xs mb-4">Routes We Love</p>
-      <h1 class="font-heading text-4xl font-extrabold sm:text-6xl">Nearby Destinations</h1>
-      <p class="mt-6 text-xl text-slate-400 max-w-2xl mx-auto">Explore the spiritual and architectural wonders of Madhya Pradesh with our expert local drivers.</p>
+  <main class="pt-24 sm:pt-32 pb-16 sm:pb-24 mx-auto max-w-7xl px-5">
+    <div class="text-center mb-10 sm:mb-16">
+      <p class="text-brand font-bold uppercase tracking-[0.3em] text-xs mb-3 sm:mb-4">Routes We Love</p>
+      <h1 class="font-heading text-2xl sm:text-4xl font-extrabold lg:text-6xl" style="overflow-wrap:break-word;word-break:break-word;">Nearby Destinations</h1>
+      <p class="mt-4 sm:mt-6 text-base sm:text-xl text-slate-400 max-w-2xl mx-auto">Explore the spiritual and architectural wonders of Madhya Pradesh with our expert local drivers.</p>
     </div>
 
-    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-5 sm:gap-10 md:grid-cols-2 lg:grid-cols-3">
       <!-- Maihar -->
-      <article data-aos="fade-up" class="glass group relative overflow-hidden rounded-[3rem] border border-white/5 transiton duration-500 hover:border-brand/30">
-        <div class="aspect-[16/10] bg-slate-800 flex items-center justify-center overflow-hidden">
-          <div class="text-brand font-bold opacity-20 group-hover:scale-110 transition duration-700">IMAGE: MAIHAR DEVI</div>
+      <article data-aos="fade-up" class="glass group relative overflow-hidden rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 transiton duration-500 hover:border-brand/30">
+        <div class="aspect-[16/10] bg-slate-800 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1621259341074-68165d49e69c?auto=format&fit=crop&q=80&w=800" alt="Maihar Temple" class="h-full w-full object-cover group-hover:scale-110 transition duration-700">
         </div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Maihar (Sharda Devi)</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">Satna to Maihar is our busiest route. We offer dedicated pilgrimage packages including hill waiting time.</p>
-          <div class="flex items-center justify-between">
-             <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Distance: 45 KM</span>
-             <a href="contact.html" class="text-brand font-bold group-hover:translate-x-2 transition">Book Route →</a>
+        <div class="p-5 sm:p-8">
+          <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Maihar (Sharda Devi)</h3>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">Satna to Maihar is our busiest route. We offer dedicated pilgrimage packages including hill waiting time.</p>
+          <div class="flex items-center justify-between flex-wrap gap-2">
+             <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-500">Distance: 45 KM</span>
+             <a href="contact.html" class="text-brand font-bold group-hover:translate-x-2 transition text-sm sm:text-base">Book Route →</a>
           </div>
         </div>
       </article>
 
       <!-- Khajuraho -->
-      <article data-aos="fade-up" data-aos-delay="100" class="glass group relative overflow-hidden rounded-[3rem] border border-white/5 transiton duration-500 hover:border-brand/30">
-        <div class="aspect-[16/10] bg-slate-800 flex items-center justify-center overflow-hidden">
-          <div class="text-brand font-bold opacity-20 group-hover:scale-110 transition duration-700">IMAGE: KHAJURAHO TEMPLES</div>
+      <article data-aos="fade-up" data-aos-delay="100" class="glass group relative overflow-hidden rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 transiton duration-500 hover:border-brand/30">
+        <div class="aspect-[16/10] bg-slate-800 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1596395819057-e37f55a85103?auto=format&fit=crop&q=80&w=800" alt="Khajuraho" class="h-full w-full object-cover group-hover:scale-110 transition duration-700">
         </div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Khajuraho</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">UNESCO World Heritage site. Visit the complex of Hindu and Jain temples with a comfortable day trip.</p>
-          <div class="flex items-center justify-between">
-             <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Distance: 115 KM</span>
-             <a href="contact.html" class="text-brand font-bold group-hover:translate-x-2 transition">Book Route →</a>
+        <div class="p-5 sm:p-8">
+          <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Khajuraho</h3>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">UNESCO World Heritage site. Visit the complex of Hindu and Jain temples with a comfortable day trip.</p>
+          <div class="flex items-center justify-between flex-wrap gap-2">
+             <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-500">Distance: 115 KM</span>
+             <a href="contact.html" class="text-brand font-bold group-hover:translate-x-2 transition text-sm sm:text-base">Book Route →</a>
           </div>
         </div>
       </article>
 
       <!-- Chitrakoot -->
-      <article data-aos="fade-up" data-aos-delay="200" class="glass group relative overflow-hidden rounded-[3rem] border border-white/5 transiton duration-500 hover:border-brand/30">
-        <div class="aspect-[16/10] bg-slate-800 flex items-center justify-center overflow-hidden">
-          <div class="text-brand font-bold opacity-20 group-hover:scale-110 transition duration-700">IMAGE: CHITRAKOOT</div>
+      <article data-aos="fade-up" data-aos-delay="200" class="glass group relative overflow-hidden rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 transiton duration-500 hover:border-brand/30">
+        <div class="aspect-[16/10] bg-slate-800 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&q=80&w=800" alt="Chitrakoot" class="h-full w-full object-cover group-hover:scale-110 transition duration-700">
         </div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Chitrakoot</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">A spiritual journey to the holy town where Lord Rama spent his exile. Includes visit to Ramghat & Hanumandhara.</p>
-          <div class="flex items-center justify-between">
-             <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Distance: 78 KM</span>
-             <a href="contact.html" class="text-brand font-bold group-hover:translate-x-2 transition">Book Route →</a>
+        <div class="p-5 sm:p-8">
+          <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Chitrakoot</h3>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">A spiritual journey to the holy town where Lord Rama spent his exile. Includes visit to Ramghat & Hanumandhara.</p>
+          <div class="flex items-center justify-between flex-wrap gap-2">
+             <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-500">Distance: 78 KM</span>
+             <a href="contact.html" class="text-brand font-bold group-hover:translate-x-2 transition text-sm sm:text-base">Book Route →</a>
           </div>
         </div>
       </article>
       
       <!-- Panna -->
-      <article data-aos="fade-up" class="glass group relative overflow-hidden rounded-[3rem] border border-white/5 transiton duration-500 hover:border-brand/30">
-        <div class="aspect-[16/10] bg-slate-800 flex items-center justify-center overflow-hidden">
-          <div class="text-brand font-bold opacity-20 group-hover:scale-110 transition duration-700">IMAGE: PANNA TIGER RESERVE</div>
+      <article data-aos="fade-up" class="glass group relative overflow-hidden rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 transiton duration-500 hover:border-brand/30">
+        <div class="aspect-[16/10] bg-slate-800 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&q=80&w=800" alt="Panna Tiger Reserve" class="h-full w-full object-cover group-hover:scale-110 transition duration-700">
         </div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Panna Tiger Reserve</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6">Experience the wildlife and natural beauty of the Vindhya Range. Safe forest-compliant entry with our experienced drivers.</p>
-          <div class="flex items-center justify-between">
-             <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Distance: 75 KM</span>
-             <a href="contact.html" class="text-brand font-bold group-hover:translate-x-2 transition">Book Route →</a>
+        <div class="p-5 sm:p-8">
+          <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Panna Tiger Reserve</h3>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6">Experience the wildlife and natural beauty of the Vindhya Range. Safe forest-compliant entry with our experienced drivers.</p>
+          <div class="flex items-center justify-between flex-wrap gap-2">
+             <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-500">Distance: 75 KM</span>
+             <a href="contact.html" class="text-brand font-bold group-hover:translate-x-2 transition text-sm sm:text-base">Book Route →</a>
           </div>
         </div>
       </article>
     </div>
   </main>
 
-  <footer class="border-t border-white/5 bg-slate-950/80 py-20 text-center">
+  <footer class="border-t border-white/5 bg-slate-950/80 py-12 sm:py-20 text-center px-5">
     <h2 class="font-heading text-2xl font-extrabold text-brand mb-4">SiyaRam Taxi Services</h2>
-    <div class="flex justify-center gap-6 mb-8 text-slate-500 text-sm">
+    <div class="flex justify-center gap-6 mb-6 sm:mb-8 text-slate-500 text-sm flex-wrap">
       <a href="index.html" class="hover:text-white">Home</a>
       <a href="about.html" class="hover:text-white">About</a>
       <a href="fleet.html" class="hover:text-white">Fleet</a>
