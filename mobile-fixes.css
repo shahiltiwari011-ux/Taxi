@@ -1,0 +1,20 @@
+/* Mobile and smooth scrolling fixes */
+html { scroll-behavior: smooth; }
+
+/* Reduce heavy transitions on mobile to avoid jitter */
+@media (max-width: 768px) {
+  .glass {
+    transition: none !important;
+  }
+  .section-title {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .stats-card {
+    padding: 1rem 0.5rem !important;
+  }
+  .pt-24, .py-24, .py-20 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}

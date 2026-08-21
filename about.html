@@ -5,18 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | SiyaRam Taxi Services Satna</title>
   <meta name="description" content="Learn more about SiyaRam Taxi Services, providing premium and reliable road travel in Satna, MP since 2021.">
-  
-  <!-- Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
-  
-  <!-- CSS Dependencies -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Tailwind Configuration -->
   <script>
     window.tailwindConfig = {
       theme: {
@@ -30,12 +25,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = window.tailwindConfig;</script>
 </head>
-<body class="font-body selection:bg-brand selection:text-ink bg-ink">
-  <!-- Common Header -->
+<body class="font-body selection:bg-brand selection:text-ink bg-ink text-mist">
+
+  <!-- ═══ NAVBAR ═══ -->
   <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 nav-solid">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
       <a href="index.html" class="glass flex items-center gap-3 rounded-full px-4 py-2">
-        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-ink shadow-lg shadow-brand/30">
+        <div class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-ink shadow-lg shadow-brand/30">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M5 11h14l-1.1-3.3A3 3 0 0 0 15.05 5H8.95A3 3 0 0 0 6.1 7.7L5 11Zm-.5 1.5A2.5 2.5 0 0 0 2 15v3a1 1 0 1 0 2 0v-1h1.5l1 1.5A2 2 0 0 0 8.17 20h7.66a2 2 0 0 0 1.66-.9l1-1.6H20v1a1 1 0 1 0 2 0v-3a2.5 2.5 0 0 0-2.5-2.5h-15ZM7 15a1.25 1.25 0 1 1 0-2.5A1.25 1.25 0 0 1 7 15Zm10 0a1.25 1.25 0 1 1 0-2.5A1.25 1.25 0 0 1 17 15Z"/></svg>
         </div>
         <div>
@@ -43,79 +39,131 @@
           <p class="text-[10px] text-slate-300">Taxi Services</p>
         </div>
       </a>
-      <nav class="hidden items-center gap-7 text-sm font-medium text-slate-200 lg:flex">
+
+      <nav class="hidden items-center gap-6 text-sm font-medium text-slate-200 lg:flex">
         <a href="index.html" class="transition hover:text-brand">Home</a>
-        <a href="about.html" class="text-brand">About</a>
+        <a href="about.html" class="text-brand font-semibold">About</a>
         <a href="fleet.html" class="transition hover:text-brand">Fleet</a>
         <a href="destinations.html" class="transition hover:text-brand">Destinations</a>
         <a href="contact.html" class="transition hover:text-brand">Contact</a>
-        <a href="https://api.whatsapp.com/send?phone=7999515625" target="_blank" rel="noreferrer" class="rounded-full bg-brand px-6 py-3 font-bold text-ink transition hover:scale-105">Book Now</a>
+        <a href="https://api.whatsapp.com/send?phone=7999515625" target="_blank" rel="noreferrer" class="rounded-full bg-brand px-5 py-2.5 font-bold text-ink transition hover:scale-105 hover:bg-amber-400">Book Now</a>
       </nav>
-      <button id="menu-toggle" class="glass inline-flex h-12 w-12 items-center justify-center rounded-full text-mist lg:hidden" aria-label="Open menu"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+
+      <button id="menu-toggle" class="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-mist lg:hidden" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
-    <div id="mobile-menu-backdrop" class="pointer-events-none fixed inset-0 z-40 bg-slate-950/50 opacity-0 transition duration-300 lg:hidden"></div>
-    <aside id="mobile-menu" class="glass fixed right-0 top-0 z-50 h-full w-[80%] max-w-sm translate-x-full border-l border-white/10 p-8 transition-transform duration-300 lg:hidden text-mist">
-      <div class="mb-10 flex items-center justify-between">
-        <p class="font-heading text-xl font-extrabold text-brand">SiyaRam Taxi</p>
-        <button id="menu-close" class="rounded-full border border-white/10 p-2 text-slate-200"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></button>
+
+    <div id="mobile-menu-backdrop" class="pointer-events-none fixed inset-0 z-40 bg-slate-950/60 opacity-0 transition-opacity duration-300"></div>
+    <aside id="mobile-menu" class="glass fixed right-0 top-0 z-50 flex h-full w-4/5 max-w-xs flex-col translate-x-full border-l border-white/10 p-6 transition-transform duration-300 text-mist">
+      <div class="mb-8 flex items-center justify-between">
+        <p class="font-heading text-lg font-extrabold text-brand">SiyaRam Taxi</p>
+        <button id="menu-close" class="rounded-full border border-white/10 p-2 text-slate-200 hover:bg-white/10 transition">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
       </div>
-      <div class="flex flex-col flex-grow">
+      <div class="flex flex-col flex-grow gap-1">
         <a class="mobile-link" href="index.html">Home</a>
         <a class="mobile-link" href="about.html">About</a>
         <a class="mobile-link" href="fleet.html">Fleet</a>
         <a class="mobile-link" href="destinations.html">Destinations</a>
         <a class="mobile-link" href="contact.html">Contact</a>
       </div>
-      <a href="contact.html" class="mt-8 block w-full rounded-full bg-brand py-4 text-center font-bold text-ink">Book Your Ride</a>
+      <a href="contact.html" class="mt-6 block w-full rounded-full bg-brand py-4 text-center font-bold text-ink hover:bg-amber-400 transition">Book Your Ride</a>
     </aside>
   </header>
 
-  <main class="pt-24 min-h-screen">
-    <section class="relative z-20 mx-auto max-w-7xl px-5 py-12 sm:py-24 sm:px-6 lg:px-8">
-      <div class="grid items-center gap-10 lg:gap-20 lg:grid-cols-2">
+  <main class="pt-20 sm:pt-24 min-h-screen">
+
+    <!-- ═══ ABOUT HERO ═══ -->
+    <section class="mx-auto max-w-7xl px-5 py-12 sm:py-20 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 sm:gap-16 lg:gap-20 lg:grid-cols-2">
+
         <div data-aos="fade-right">
-          <div class="glass relative rounded-[1.5rem] sm:rounded-[3rem] p-3 sm:p-4">
-            <div class="rounded-[1.25rem] sm:rounded-[2.5rem] overflow-hidden bg-slate-800/50 aspect-[4/3] flex items-center justify-center border border-white/5 relative">
-              <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=1200" alt="Driving" class="absolute inset-0 h-full w-full object-cover">
-              <div class="relative z-10 text-center p-6 sm:p-12 bg-slate-900/40 backdrop-blur-sm w-full h-full flex flex-col items-center justify-center">
-                 <div class="mb-4 sm:mb-6 inline-flex h-14 w-14 sm:h-20 sm:w-20 items-center justify-center rounded-2xl sm:rounded-3xl bg-brand/10 text-brand">
-                   <svg class="h-7 w-7 sm:h-10 sm:w-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-                 </div>
-                 <h1 class="font-heading text-2xl sm:text-4xl font-extrabold mb-3 sm:mb-4 text-white">Our Satna Story</h1>
-                 <p class="text-white leading-relaxed text-sm sm:text-lg">Leading the way in premium, affordable, and safe transportation since 2021.</p>
+          <div class="glass relative rounded-2xl sm:rounded-[3rem] p-3 sm:p-4">
+            <div class="rounded-xl sm:rounded-[2.5rem] overflow-hidden bg-slate-800/50 aspect-[4/3] relative">
+              <img
+                src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=1200"
+                alt="SiyaRam Taxi driver on the road"
+                class="absolute inset-0 h-full w-full object-cover"
+                onerror="this.style.display='none'"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-10">
+                <div class="mb-4 inline-flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-brand/20 text-brand backdrop-blur-sm border border-brand/30">
+                  <svg class="h-6 w-6 sm:h-9 sm:w-9" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                </div>
+                <h1 class="font-heading text-2xl sm:text-3xl font-extrabold text-white mb-2">Our Satna Story</h1>
+                <p class="text-slate-300 text-sm sm:text-base">Leading in premium, affordable travel since 2021.</p>
               </div>
             </div>
           </div>
         </div>
-        
-        <div>
-          <h2 class="section-title font-heading text-2xl sm:text-4xl font-extrabold lg:text-5xl leading-tight">Professional Standards, Personal Care</h2>
-          <p class="mt-4 sm:mt-8 text-base sm:text-xl leading-relaxed text-slate-300">SiyaRam Taxi Services was founded to solve a simple problem: the lack of predictable, high-quality taxi options in the Satna region.</p>
-          <div class="mt-6 sm:mt-10 space-y-4 sm:space-y-6 text-slate-400 text-sm sm:text-lg">
-            <p>Our journey began with a single vehicle and a commitment to punctuality. Today, we manage a versatile fleet that caters to every travel need—from quick station drops to long-distance pilgrimage circuits.</p>
+
+        <div data-aos="fade-left">
+          <p class="text-brand font-bold uppercase tracking-[0.3em] text-xs mb-3">Est. 2021 · Satna</p>
+          <h2 class="section-title font-heading text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-mist">Professional Standards, Personal Care</h2>
+          <div class="mt-5 sm:mt-8 space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p>SiyaRam Taxi Services was founded to solve a simple problem: the lack of predictable, high-quality taxi options in the Satna region.</p>
+            <p>Our journey began with a single vehicle and a commitment to punctuality. Today, we manage a versatile fleet that caters to every travel need — from quick station drops to long-distance pilgrimage circuits.</p>
             <p>We believe your travel experience should be effortless. That's why we invest in regular vehicle maintenance, driver training, and easy digital booking via WhatsApp.</p>
           </div>
-          <div class="mt-8 sm:mt-12 p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2.5rem] bg-card border border-white/5">
+          <div class="mt-8 sm:mt-10 p-5 sm:p-8 rounded-2xl sm:rounded-[2rem] bg-slate-800/60 border border-white/5">
             <p class="text-brand font-bold uppercase tracking-widest text-xs sm:text-sm mb-4">Our Core Promise</p>
-            <ul class="space-y-3 sm:space-y-4 text-sm sm:text-base">
-              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-brand"></span> Punctual Arrival & Departure</li>
-              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-brand"></span> Transparent, No-Surprise Pricing</li>
-              <li class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-brand"></span> Clean, Sanitized Vehicles</li>
+            <ul class="space-y-3 text-sm sm:text-base">
+              <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-brand shrink-0"></span> Punctual Arrival &amp; Departure</li>
+              <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-brand shrink-0"></span> Transparent, No-Surprise Pricing</li>
+              <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-brand shrink-0"></span> Clean, Sanitized Vehicles</li>
+              <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-brand shrink-0"></span> Police Verified, Trained Drivers</li>
+              <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-brand shrink-0"></span> 24/7 WhatsApp Support</li>
             </ul>
           </div>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="contact.html" class="inline-flex items-center justify-center rounded-full bg-brand px-8 py-4 font-bold text-ink transition hover:scale-105 hover:bg-amber-400">Book a Ride</a>
+            <a href="fleet.html" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 font-bold text-mist transition hover:bg-white/10">View Our Fleet</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ VALUES ═══ -->
+    <section class="mx-auto max-w-7xl px-5 py-10 sm:py-16 sm:px-6 lg:px-8 border-t border-white/5">
+      <div class="text-center mb-10 sm:mb-14" data-aos="fade-up">
+        <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-mist">What Sets Us Apart</h2>
+      </div>
+      <div class="grid gap-5 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="glass p-6 sm:p-8 rounded-2xl border border-white/5 hover-glow" data-aos="fade-up">
+          <div class="text-3xl mb-4">🛡️</div>
+          <h3 class="text-lg sm:text-xl font-bold text-mist mb-2">Verified Drivers</h3>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">All our drivers are police verified, licensed, and trained for safe, courteous service.</p>
+        </div>
+        <div class="glass p-6 sm:p-8 rounded-2xl border border-white/5 hover-glow" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-3xl mb-4">📍</div>
+          <h3 class="text-lg sm:text-xl font-bold text-mist mb-2">Local Expertise</h3>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">Our drivers know Satna and surrounding areas like the back of their hand — roads, shortcuts, and local tips.</p>
+        </div>
+        <div class="glass p-6 sm:p-8 rounded-2xl border border-white/5 hover-glow" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-3xl mb-4">💬</div>
+          <h3 class="text-lg sm:text-xl font-bold text-mist mb-2">Instant Support</h3>
+          <p class="text-slate-400 text-sm sm:text-base leading-relaxed">WhatsApp us anytime — our team responds in minutes and confirms your booking fast.</p>
         </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="border-t border-white/5 bg-slate-950/80 py-12 sm:py-20 text-center px-5">
-    <h2 class="font-heading text-2xl font-extrabold text-brand mb-4">SiyaRam Taxi Services</h2>
-    <p class="text-slate-500 text-sm mb-6 sm:mb-8">© 2024 SiyaRam Taxi Services. Satna, MP.</p>
-    <div class="flex justify-center gap-6 text-sm">
+  <footer class="border-t border-white/5 bg-slate-950/80 py-10 sm:py-16 text-center px-5">
+    <h2 class="font-heading text-xl sm:text-2xl font-extrabold text-brand mb-3">SiyaRam Taxi Services</h2>
+    <p class="text-slate-500 text-xs sm:text-sm mb-6">Satna, Madhya Pradesh &bull; Available 24/7</p>
+    <div class="flex flex-wrap justify-center gap-5 sm:gap-8 text-sm mb-6">
       <a href="index.html" class="text-slate-400 hover:text-white transition">Home</a>
+      <a href="about.html" class="text-slate-400 hover:text-white transition">About</a>
       <a href="fleet.html" class="text-slate-400 hover:text-white transition">Fleet</a>
+      <a href="destinations.html" class="text-slate-400 hover:text-white transition">Destinations</a>
       <a href="contact.html" class="text-slate-400 hover:text-white transition">Contact</a>
     </div>
+    <p class="text-slate-600 text-xs">&copy; 2024 SiyaRam Taxi Services. All rights reserved.</p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>

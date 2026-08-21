@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,38 +21,46 @@
   <script>tailwind.config = window.tailwindConfig;</script>
 </head>
 <body class="font-body text-mist bg-ink">
-  <header id="navbar" class="fixed inset-x-0 top-0 z-50 nav-solid">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+  <!-- ═══ NAVBAR ═══ -->
+  <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 nav-solid">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
       <a href="index.html" class="glass flex items-center gap-3 rounded-full px-4 py-2">
-        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand text-ink shadow-lg shadow-brand/30">
+        <div class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-ink shadow-lg shadow-brand/30">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M5 11h14l-1.1-3.3A3 3 0 0 0 15.05 5H8.95A3 3 0 0 0 6.1 7.7L5 11Zm-.5 1.5A2.5 2.5 0 0 0 2 15v3a1 1 0 1 0 2 0v-1h1.5l1 1.5A2 2 0 0 0 8.17 20h7.66a2 2 0 0 0 1.66-.9l1-1.6H20v1a1 1 0 1 0 2 0v-3a2.5 2.5 0 0 0-2.5-2.5h-15ZM7 15a1.25 1.25 0 1 1 0-2.5A1.25 1.25 0 0 1 7 15Zm10 0a1.25 1.25 0 1 1 0-2.5A1.25 1.25 0 0 1 17 15Z"/></svg>
         </div>
-        <div><p class="font-heading text-sm font-extrabold uppercase tracking-[0.24em] text-brand">SiyaRam</p><p class="text-[10px] text-slate-300">Taxi Services</p></div>
+        <div>
+          <p class="font-heading text-sm font-extrabold uppercase tracking-[0.24em] text-brand">SiyaRam</p>
+          <p class="text-[10px] text-slate-300">Taxi Services</p>
+        </div>
       </a>
-      <nav class="hidden items-center gap-7 text-sm font-medium text-slate-200 lg:flex">
+      <nav class="hidden items-center gap-6 text-sm font-medium text-slate-200 lg:flex">
         <a href="index.html" class="transition hover:text-brand">Home</a>
         <a href="about.html" class="transition hover:text-brand">About</a>
-        <a href="fleet.html" class="text-brand">Fleet</a>
+        <a href="fleet.html" class="text-brand font-semibold">Fleet</a>
         <a href="destinations.html" class="transition hover:text-brand">Destinations</a>
         <a href="contact.html" class="transition hover:text-brand">Contact</a>
-        <a href="https://api.whatsapp.com/send?phone=7999515625" class="rounded-full bg-brand px-6 py-3 font-bold text-ink">Book Now</a>
+        <a href="https://api.whatsapp.com/send?phone=7999515625" target="_blank" rel="noreferrer" class="rounded-full bg-brand px-5 py-2.5 font-bold text-ink transition hover:scale-105 hover:bg-amber-400">Book Now</a>
       </nav>
-      <button id="menu-toggle" class="glass inline-flex h-12 w-12 items-center justify-center rounded-full text-mist lg:hidden" aria-label="Open menu"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button id="menu-toggle" class="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-mist lg:hidden" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
-    <div id="mobile-menu-backdrop" class="pointer-events-none fixed inset-0 z-40 bg-slate-950/50 opacity-0 transition duration-300 lg:hidden"></div>
-    <aside id="mobile-menu" class="glass fixed right-0 top-0 z-50 h-full w-[80%] max-w-sm translate-x-full border-l border-white/10 p-8 transition-transform duration-300 lg:hidden text-mist">
-      <div class="mb-10 flex items-center justify-between">
-        <p class="font-heading text-xl font-extrabold text-brand">SiyaRam Taxi</p>
-        <button id="menu-close" class="rounded-full border border-white/10 p-2 text-slate-200"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <div id="mobile-menu-backdrop" class="pointer-events-none fixed inset-0 z-40 bg-slate-950/60 opacity-0 transition-opacity duration-300"></div>
+    <aside id="mobile-menu" class="glass fixed right-0 top-0 z-50 flex h-full w-4/5 max-w-xs flex-col translate-x-full border-l border-white/10 p-6 transition-transform duration-300 text-mist">
+      <div class="mb-8 flex items-center justify-between">
+        <p class="font-heading text-lg font-extrabold text-brand">SiyaRam Taxi</p>
+        <button id="menu-close" class="rounded-full border border-white/10 p-2 text-slate-200 hover:bg-white/10 transition">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
       </div>
-      <div class="flex flex-col flex-grow">
+      <div class="flex flex-col flex-grow gap-1">
         <a class="mobile-link" href="index.html">Home</a>
         <a class="mobile-link" href="about.html">About</a>
         <a class="mobile-link" href="fleet.html">Fleet</a>
         <a class="mobile-link" href="destinations.html">Destinations</a>
         <a class="mobile-link" href="contact.html">Contact</a>
       </div>
-      <a href="contact.html" class="mt-8 block w-full rounded-full bg-brand py-4 text-center font-bold text-ink">Book Your Ride</a>
+      <a href="contact.html" class="mt-6 block w-full rounded-full bg-brand py-4 text-center font-bold text-ink hover:bg-amber-400 transition">Book Your Ride</a>
     </aside>
   </header>
 
@@ -62,66 +70,386 @@
       <p class="text-base sm:text-xl text-slate-400 max-w-2xl mx-auto">From economy sedans to luxury SUVs, we have the perfect vehicle for every group size and journey type.</p>
     </div>
 
-    <div class="grid gap-5 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <!-- Sedan -->
-      <div data-aos="fade-up" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500">
-        <div class="bg-brand/10 text-brand px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Popular Choice (4+1)</div>
-        <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">Swift Dzire</h3>
-        <p class="text-slate-400 text-sm mb-6 sm:mb-8">The most comfortable and economical choice for small families and business trips.</p>
-        <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 overflow-hidden group-hover:shadow-[0_0_30px_rgba(245,166,35,0.15)] transition duration-500">
-          <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Swift Dzire" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+    <div class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Maruti Dzire -->
+      <div data-aos="fade-up" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between">
+        <div>
+          <div class="bg-brand/10 text-brand px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Sedan</div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mb-2 font-heading text-mist">Maruti Dzire</h3>
+          <p class="text-slate-400 text-sm mb-6">Comfortable and highly economical sedan, perfect for small families and business trips.</p>
+          <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 overflow-hidden group-hover:shadow-[0_0_30px_rgba(245,166,35,0.15)] transition duration-500">
+            <img src="images/maruti_dzire.jpg" alt="Maruti Dzire" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="space-y-3 mb-6 border-t border-white/5 pt-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Seating:</strong> 4 Adults + Driver</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Rate:</strong> Swift Dzire @ Rs. 13/km</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Package:</strong> 8 hr / 80 km @ Rs. 2000</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span>Outstation Run (Min 250km/Day)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span class="text-slate-400">Toll charges are not included</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Color:</strong> White</span>
+            </div>
+          </div>
         </div>
-        <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-10 border-t border-white/5 pt-6 sm:pt-8 text-sm">
-            <div class="flex justify-between"><span class="text-slate-500">Capacity</span><span>4 Passengers</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Luggage</span><span>2 Large Bags</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Type</span><span>AC Sedan</span></div>
-        </div>
-        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Check Price</a>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Book Now</a>
       </div>
 
-      <!-- Ertiga -->
-      <div data-aos="fade-up" data-aos-delay="100" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500">
-        <div class="bg-indigo-500/10 text-indigo-400 px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Family MVP (6+1)</div>
-        <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">Maruti Ertiga</h3>
-        <p class="text-slate-400 text-sm mb-6 sm:mb-8">Extra space for everyone. Best for airport transfers and large families.</p>
-        <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 overflow-hidden group-hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] transition duration-500">
-          <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c15d?auto=format&fit=crop&q=80&w=800" alt="Maruti Ertiga" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+      <!-- Kia Sonet -->
+      <div data-aos="fade-up" data-aos-delay="100" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between">
+        <div>
+          <div class="bg-indigo-500/10 text-indigo-400 px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Compact SUV</div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mb-2 font-heading text-mist">Kia Sonet</h3>
+          <p class="text-slate-400 text-sm mb-6">A feature-packed and comfortable compact SUV for premium city and highway travel.</p>
+          <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 overflow-hidden group-hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] transition duration-500">
+            <img src="images/kia_sonet.jpg" alt="Kia Sonet" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="space-y-3 mb-6 border-t border-white/5 pt-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Seating:</strong> 4 Adults + Driver</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Rate:</strong> Kia Sonet @ Rs. 15/km</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span>Outstation Run (Min 250km/Day)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span class="text-slate-400">Toll charges are not included</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Color:</strong> White</span>
+            </div>
+          </div>
         </div>
-        <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-10 border-t border-white/5 pt-6 sm:pt-8 text-sm">
-            <div class="flex justify-between"><span class="text-slate-500">Capacity</span><span>6 Passengers</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Luggage</span><span>3 Large Bags</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Type</span><span>AC SUV/MPV</span></div>
-        </div>
-        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Check Price</a>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Book Now</a>
       </div>
 
-      <!-- Innova -->
-      <div data-aos="fade-up" data-aos-delay="200" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500">
-        <div class="bg-emerald-500/10 text-emerald-400 px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Premium Travel (7+1)</div>
-        <h3 class="text-2xl sm:text-3xl font-extrabold mb-2">Innova Crysta</h3>
-        <p class="text-slate-400 text-sm mb-6 sm:mb-8">Luxury redefined. Travel in supreme comfort with captain seats and premium AC.</p>
-        <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 overflow-hidden group-hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition duration-500">
-          <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcbaad?auto=format&fit=crop&q=80&w=800" alt="Innova Crysta" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+      <!-- Maruti Ertiga -->
+      <div data-aos="fade-up" data-aos-delay="200" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between">
+        <div>
+          <div class="bg-indigo-500/10 text-indigo-400 px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Family MUV (6+1)</div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mb-2 font-heading text-mist">Maruti Ertiga</h3>
+          <p class="text-slate-400 text-sm mb-6">Extra spacing for everyone. Best-in-class mileage and comfort for group journeys.</p>
+          <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 overflow-hidden group-hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] transition duration-500">
+            <img src="images/maruti_ertiga.jpg" alt="Maruti Ertiga" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="space-y-3 mb-6 border-t border-white/5 pt-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Seating:</strong> 6 Adults + Driver</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Rate:</strong> Maruti Ertiga @ Rs. 16/km</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span>Outstation Run (Min 250km/Day)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span class="text-slate-400">Toll charges are not included</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Color:</strong> White</span>
+            </div>
+          </div>
         </div>
-        <div class="space-y-3 sm:space-y-4 mb-6 sm:mb-10 border-t border-white/5 pt-6 sm:pt-8 text-sm">
-            <div class="flex justify-between"><span class="text-slate-500">Capacity</span><span>7 Passengers</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Luggage</span><span>4 Large Bags</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Type</span><span>Luxury SUV</span></div>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Book Now</a>
+      </div>
+
+      <!-- Innova Crysta -->
+      <div data-aos="fade-up" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between">
+        <div>
+          <div class="bg-emerald-500/10 text-emerald-400 px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Premium Travel (6+1)</div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mb-2 font-heading text-mist">Innova Crysta</h3>
+          <p class="text-slate-400 text-sm mb-6">Supreme luxury with spacious captain seats, ultimate safety, and dual-zone air conditioning.</p>
+          <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 overflow-hidden group-hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition duration-500">
+            <img src="images/innova_crysta.jpg" alt="Innova Crysta" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="space-y-3 mb-6 border-t border-white/5 pt-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Seating:</strong> 6 Adults + Driver</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Rate:</strong> Innova Crysta @ Rs. 22/km</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span>Outstation Run (Min 250km/Day)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span class="text-emerald-400 font-semibold">Toll charges are included</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Color:</strong> White</span>
+            </div>
+          </div>
         </div>
-        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Check Price</a>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Book Now</a>
+      </div>
+
+      <!-- Tempo Traveller -->
+      <div data-aos="fade-up" data-aos-delay="100" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between">
+        <div>
+          <div class="bg-brand/10 text-brand px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Minibus</div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mb-2 font-heading text-mist">Tempo Traveller</h3>
+          <p class="text-slate-400 text-sm mb-6">Perfect for long-distance family trips, corporate transfers, and large group outings.</p>
+          <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 overflow-hidden group-hover:shadow-[0_0_30px_rgba(245,166,35,0.15)] transition duration-500">
+            <img src="images/tempo_traveller.jpg" alt="Tempo Traveller" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="space-y-3 mb-6 border-t border-white/5 pt-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Seating:</strong> 17 Seater</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Rate:</strong> Tempo Traveller @ Rs. 40/km</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span>Outstation Run (Min 250km/Day)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span class="text-slate-400">Toll charges are not included</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Color:</strong> White</span>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Book Now</a>
+      </div>
+
+      <!-- Force Urbania -->
+      <div data-aos="fade-up" data-aos-delay="200" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between">
+        <div>
+          <div class="bg-indigo-500/10 text-indigo-400 px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Luxury Van</div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mb-2 font-heading text-mist">Force Urbania</h3>
+          <p class="text-slate-400 text-sm mb-6">Super premium travel experience with ergonomic individual seats, luxury ambient lighting, and top-tier suspension.</p>
+          <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 overflow-hidden group-hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] transition duration-500">
+            <img src="images/force_urbania.jpg" alt="Force Urbania" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="space-y-3 mb-6 border-t border-white/5 pt-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Seating:</strong> 17 Seater</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Rate:</strong> Force Urbania @ Rs. 42/km</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span>Outstation Run (Min 250km/Day)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span class="text-slate-400">Toll charges are not included</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Color:</strong> White</span>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Book Now</a>
+      </div>
+
+      <!-- Mahindra Scorpio -->
+      <div data-aos="fade-up" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between">
+        <div>
+          <div class="bg-emerald-500/10 text-emerald-400 px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Rugged SUV</div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mb-2 font-heading text-mist">Mahindra Scorpio</h3>
+          <p class="text-slate-400 text-sm mb-6">Powerful offroader and highway tourer with muscular styling and extreme road presence.</p>
+          <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 overflow-hidden group-hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] transition duration-500">
+            <img src="images/mahindra_scorpio.jpg" alt="Mahindra Scorpio" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="space-y-3 mb-6 border-t border-white/5 pt-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Seating:</strong> 6 Adults + Driver</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Rate:</strong> Scorpio @ Rs. 15/km</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span class="text-slate-400">Toll charges are not included</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Color:</strong> White</span>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Book Now</a>
+      </div>
+
+      <!-- Maruti Swift -->
+      <div data-aos="fade-up" data-aos-delay="100" class="glass group p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[3rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between">
+        <div>
+          <div class="bg-brand/10 text-brand px-3 sm:px-4 py-1 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest inline-block mb-4 sm:mb-6">Hatchback</div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold mb-2 font-heading text-mist">Maruti Swift</h3>
+          <p class="text-slate-400 text-sm mb-6">Stylish and sporty hatchback, perfect for solo travelers, couples, or small groups on a budget.</p>
+          <div class="aspect-[16/9] bg-slate-800/50 rounded-xl sm:rounded-2xl mb-6 overflow-hidden group-hover:shadow-[0_0_30px_rgba(245,166,35,0.15)] transition duration-500">
+            <img src="images/maruti_swift.jpg" alt="Maruti Swift" class="h-full w-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="space-y-3 mb-6 border-t border-white/5 pt-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Seating:</strong> 4 Adults + Driver</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Rate:</strong> Swift @ Rs. 12/km</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Package:</strong> 8 hr / 80 km @ Rs. 1800</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span>Outstation Run (Min 250km/Day)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span class="text-slate-400">Toll charges are not included</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand text-ink shrink-0">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </span>
+              <span><strong>Color:</strong> White</span>
+            </div>
+          </div>
+        </div>
+        <a href="contact.html" class="block text-center py-3 sm:py-4 bg-white/5 rounded-xl sm:rounded-2xl font-bold group-hover:bg-brand group-hover:text-ink transition duration-300 text-sm sm:text-base">Book Now</a>
       </div>
     </div>
   </main>
 
-  <footer class="border-t border-white/5 bg-slate-950/80 py-12 sm:py-20 text-center px-5">
-    <h2 class="font-heading text-2xl font-extrabold text-brand mb-4">SiyaRam Taxi Services</h2>
-    <p class="text-slate-500 text-sm mb-6 sm:mb-8">© 2024 SiyaRam Taxi Services. Satna, MP.</p>
-    <div class="flex justify-center gap-6 text-sm flex-wrap">
+  <footer class="border-t border-white/5 bg-slate-950/80 py-10 sm:py-16 text-center px-5">
+    <h2 class="font-heading text-xl sm:text-2xl font-extrabold text-brand mb-3">SiyaRam Taxi Services</h2>
+    <p class="text-slate-500 text-xs sm:text-sm mb-6">Satna, Madhya Pradesh &bull; Available 24/7</p>
+    <div class="flex flex-wrap justify-center gap-5 sm:gap-8 text-sm mb-6">
       <a href="index.html" class="text-slate-400 hover:text-white transition">Home</a>
       <a href="about.html" class="text-slate-400 hover:text-white transition">About</a>
+      <a href="fleet.html" class="text-slate-400 hover:text-white transition">Fleet</a>
       <a href="destinations.html" class="text-slate-400 hover:text-white transition">Destinations</a>
       <a href="contact.html" class="text-slate-400 hover:text-white transition">Contact</a>
     </div>
+    <p class="text-slate-600 text-xs">&copy; 2024 SiyaRam Taxi Services. All rights reserved.</p>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
