@@ -187,6 +187,7 @@ img { max-width: 100%; height: auto; }
   background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98)) !important;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5) !important;
   border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+  height: 100dvh !important;
 }
 
 .mobile-link {
