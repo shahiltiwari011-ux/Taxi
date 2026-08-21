@@ -173,9 +173,14 @@ img { max-width: 100%; height: auto; }
   color: var(--ink) !important;
   box-shadow: 0 4px 15px var(--brand-glow) !important;
   border: none !important;
-  display: inline-flex !important;
   align-items: center;
   justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  #menu-toggle {
+    display: none !important;
+  }
 }
 
 .mobile-link {
