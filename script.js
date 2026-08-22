@@ -1,13 +1,16 @@
 // SiyaRam Taxi Services - Main Application Script
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Highlight Active Page Link
+    // 1. Highlight Active Page Link (Desktop & Mobile)
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
-        const linkPath = link.getAttribute('href');
-        if (linkPath === currentPath) {
-            link.classList.add('text-brand');
-            link.classList.remove('text-slate-200', 'text-slate-400');
+        const href = link.getAttribute('href');
+        if (href && href !== '#' && !href.startsWith('http') && !href.startsWith('https') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+            const linkPath = href.split('/').pop();
+            if (linkPath === currentPath) {
+                link.classList.add('text-brand', 'active-nav-link');
+                link.classList.remove('text-slate-200', 'text-slate-400');
+            }
         }
     });
 
@@ -93,15 +96,29 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenu.classList.remove('translate-x-full');
             mobileBackdrop.classList.remove('pointer-events-none', 'opacity-0');
             document.body.classList.add('overflow-hidden');
+            menuToggle.setAttribute('aria-expanded', 'true');
         };
         const closeMenu = () => {
             mobileMenu.classList.add('translate-x-full');
             mobileBackdrop.classList.add('pointer-events-none', 'opacity-0');
             document.body.classList.remove('overflow-hidden');
+            menuToggle.setAttribute('aria-expanded', 'false');
         };
         menuToggle.addEventListener('click', openMenu);
         menuClose.addEventListener('click', closeMenu);
         mobileBackdrop.addEventListener('click', closeMenu);
+
+        // Close menu when pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+                closeMenu();
+            }
+        });
+
+        // Auto close menu when clicking any mobile link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
     }
 
     // 7. Booking Form Handler (WhatsApp Redirect)
