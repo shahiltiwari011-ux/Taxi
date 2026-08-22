@@ -101,7 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
         };
 
+        let scrollPosition = 0;
+
         const openMenu = () => {
+            scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
             mobileMenu.classList.remove('translate-x-full');
             mobileBackdrop.classList.remove('pointer-events-none', 'opacity-0');
             document.body.classList.add('overflow-hidden', 'menu-open');
@@ -116,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.classList.remove('menu-open');
             menuToggle.setAttribute('aria-expanded', 'false');
             document.removeEventListener('touchmove', preventBodyScroll);
+            window.scrollTo({ top: scrollPosition, behavior: 'instant' });
         };
         menuToggle.addEventListener('click', openMenu);
         menuClose.addEventListener('click', closeMenu);
