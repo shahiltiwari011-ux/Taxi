@@ -2,7 +2,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Highlight Active Page Link (Desktop & Mobile)
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    let rawPath = window.location.pathname.split('/').pop();
+    if (!rawPath || rawPath === '' || rawPath === '/') {
+        rawPath = 'index.html';
+    }
+    const currentPath = rawPath;
     document.querySelectorAll('nav a, #mobile-menu a').forEach(link => {
         const href = link.getAttribute('href');
         if (href && href !== '#' && !href.startsWith('http') && !href.startsWith('https') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
