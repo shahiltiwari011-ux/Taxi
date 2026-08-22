@@ -1,4 +1,4 @@
-// SiyaRam Taxi Services - Main Application Script
+// ShriRam Taxi Services - Main Application Script
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Highlight Active Page Link (Desktop & Mobile)
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
             const message = document.getElementById('message').value;
-            const whatsappMessage = `Hi SiyaRam Taxi Services,\n\nI want to book a cab.\nName: ${name}\nPhone: ${phone}\nDetails: ${message}`;
+            const whatsappMessage = `Hi ShriRam Taxi Services,\n\nI want to book a cab.\nName: ${name}\nPhone: ${phone}\nDetails: ${message}`;
             const encodedMessage = encodeURIComponent(whatsappMessage);
             window.open(`https://api.whatsapp.com/send?phone=7999515625&text=${encodedMessage}`, '_blank');
         });
