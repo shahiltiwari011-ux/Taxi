@@ -95,13 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const openMenu = () => {
             mobileMenu.classList.remove('translate-x-full');
             mobileBackdrop.classList.remove('pointer-events-none', 'opacity-0');
-            document.body.classList.add('overflow-hidden');
+            document.body.classList.add('overflow-hidden', 'menu-open');
+            document.documentElement.classList.add('menu-open');
             menuToggle.setAttribute('aria-expanded', 'true');
         };
         const closeMenu = () => {
             mobileMenu.classList.add('translate-x-full');
             mobileBackdrop.classList.add('pointer-events-none', 'opacity-0');
-            document.body.classList.remove('overflow-hidden');
+            document.body.classList.remove('overflow-hidden', 'menu-open');
+            document.documentElement.classList.remove('menu-open');
             menuToggle.setAttribute('aria-expanded', 'false');
         };
         menuToggle.addEventListener('click', openMenu);
