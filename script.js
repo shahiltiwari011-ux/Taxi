@@ -92,12 +92,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
 
     if (menuToggle && menuClose && mobileMenu && mobileBackdrop) {
+        const preventBodyScroll = (e) => {
+            if (mobileMenu.contains(e.target)) return;
+            e.preventDefault();
+        };
+
         const openMenu = () => {
             mobileMenu.classList.remove('translate-x-full');
             mobileBackdrop.classList.remove('pointer-events-none', 'opacity-0');
             document.body.classList.add('overflow-hidden', 'menu-open');
             document.documentElement.classList.add('menu-open');
             menuToggle.setAttribute('aria-expanded', 'true');
+            document.addEventListener('touchmove', preventBodyScroll, { passive: false });
         };
         const closeMenu = () => {
             mobileMenu.classList.add('translate-x-full');
@@ -105,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('overflow-hidden', 'menu-open');
             document.documentElement.classList.remove('menu-open');
             menuToggle.setAttribute('aria-expanded', 'false');
+            document.removeEventListener('touchmove', preventBodyScroll);
         };
         menuToggle.addEventListener('click', openMenu);
         menuClose.addEventListener('click', closeMenu);
