@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = document.getElementById('message').value;
             const whatsappMessage = `Hi ShriRam Taxi Services,\n\nI want to book a cab.\nName: ${name}\nPhone: ${phone}\nDetails: ${message}`;
             const encodedMessage = encodeURIComponent(whatsappMessage);
-            window.open(`https://api.whatsapp.com/send?phone=7999515625&text=${encodedMessage}`, '_blank');
+            window.open(`https://api.whatsapp.com/send?phone=9174753164&text=${encodedMessage}`, '_blank');
         });
     }
 });
