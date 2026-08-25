@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popular Taxi Routes from Satna | ShriRam Taxi Services</title>
+  <meta name="description" content="Explore popular outstation and pilgrimage taxi routes from Satna to Rewa, Bhopal, Indore, Ayodhya, Kashi, and more with ShriRam Taxi Services.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    window.tailwindConfig = {
+      theme: { extend: { colors: { brand: '#F5A623', brandHover: '#E08B10', ink: '#0F172A', card: '#1E293B', mist: '#F8FAFC' }, fontFamily: { heading: ['Plus Jakarta Sans', 'sans-serif'], body: ['Manrope', 'sans-serif'] } } }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = window.tailwindConfig;</script>
+</head>
+<body class="font-body text-mist bg-ink">
+  <!-- ═══ NAVBAR ═══ -->
+  <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 nav-solid">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <a href="index.html" class="glass flex items-center gap-3 rounded-full px-4 py-2">
+        <div class="flex h-9 w-9 items-center justify-center rounded-full bg-brand text-ink shadow-lg shadow-brand/30">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M5 11h14l-1.1-3.3A3 3 0 0 0 15.05 5H8.95A3 3 0 0 0 6.1 7.7L5 11Zm-.5 1.5A2.5 2.5 0 0 0 2 15v3a1 1 0 1 0 2 0v-1h1.5l1 1.5A2 2 0 0 0 8.17 20h7.66a2 2 0 0 0 1.66-.9l1-1.6H20v1a1 1 0 1 0 2 0v-3a2.5 2.5 0 0 0-2.5-2.5h-15ZM7 15a1.25 1.25 0 1 1 0-2.5A1.25 1.25 0 0 1 7 15Zm10 0a1.25 1.25 0 1 1 0-2.5A1.25 1.25 0 0 1 17 15Z"/></svg>
+        </div>
+        <div>
+          <p class="font-heading text-sm font-extrabold uppercase tracking-[0.24em] text-brand">ShriRam</p>
+          <p class="text-[10px] text-slate-300">Taxi Services</p>
+        </div>
+      </a>
+      <nav class="hidden lg:flex flex-1 justify-center items-center gap-6 text-sm font-medium text-slate-200">
+        <a href="index.html" class="transition hover:text-brand">Home</a>
+        <a href="about.html" class="transition hover:text-brand">About</a>
+        <a href="fleet.html" class="transition hover:text-brand">Fleet</a>
+        <a href="destinations.html" class="transition hover:text-brand">Destinations</a>
+        <a href="routes.html" class="text-brand font-semibold">Routes</a>
+        <a href="contact.html" class="transition hover:text-brand">Contact</a>
+      </nav>
+
+      <div class="hidden lg:flex shrink-0">
+        <a href="https://api.whatsapp.com/send?phone=9174753164" target="_blank" rel="noreferrer" class="rounded-full bg-brand px-5 py-2.5 font-bold text-ink transition hover:scale-105 hover:bg-amber-400">Book Now</a>
+      </div>
+
+      <button id="menu-toggle" class="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-mist lg:hidden" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu-backdrop" class="pointer-events-none fixed inset-0 z-40 bg-slate-950/60 opacity-0 transition-opacity duration-300"></div>
+    <aside id="mobile-menu" class="glass fixed right-0 top-0 z-50 flex h-full w-4/5 max-w-xs flex-col translate-x-full border-l border-white/10 p-6 transition-transform duration-300 text-mist">
+      <div class="mb-8 flex items-center justify-between">
+        <p class="font-heading text-lg font-extrabold text-brand">ShriRam Taxi</p>
+        <button id="menu-close" class="rounded-full border border-white/10 p-2 text-slate-200 hover:bg-white/10 transition">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div class="flex flex-col flex-grow gap-1">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <a class="mobile-link" href="fleet.html">Fleet</a>
+        <a class="mobile-link" href="destinations.html">Destinations</a>
+        <a class="mobile-link" href="routes.html">Routes</a>
+        <a class="mobile-link" href="contact.html">Contact</a>
+      </div>
+      <a href="contact.html" class="mt-6 block w-full rounded-full bg-brand py-4 text-center font-bold text-ink hover:bg-amber-400 transition">Book Your Ride</a>
+    </aside>
+  </header>
+
+  <main class="pt-24 sm:pt-32 pb-16 sm:pb-24 mx-auto max-w-7xl px-5">
+    <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+      <p class="text-brand font-bold uppercase tracking-[0.3em] text-xs mb-3 sm:mb-4">Cab Network from Satna</p>
+      <h1 class="font-heading text-2xl sm:text-4xl font-extrabold lg:text-6xl" style="overflow-wrap:break-word;word-break:break-word;">Taxi Routes Directory</h1>
+      <p class="mt-4 sm:mt-6 text-base sm:text-xl text-slate-400 max-w-2xl mx-auto">Instant dispatch to all destinations. Choose your route, check details, and book your ride directly on WhatsApp.</p>
+    </div>
+
+    <!-- ═══ Search & Filters ═══ -->
+    <div class="max-w-4xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-between bg-slate-900/60 p-4 rounded-3xl border border-white/5 backdrop-blur-sm shadow-xl">
+        <!-- Search Input -->
+        <div class="relative w-full md:w-96">
+          <input type="text" id="route-search" placeholder="Search destination (e.g. Bhopal, Ayodhya)..." class="w-full bg-slate-950/80 border border-white/10 rounded-full py-3 px-5 pl-12 text-sm text-mist focus:border-brand focus:outline-none transition duration-300">
+          <div class="absolute left-4 top-3.5 text-slate-500">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+        </div>
+        
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 w-full md:w-auto justify-center">
+          <button class="filter-btn active-filter px-4 py-2 rounded-full text-xs font-bold tracking-wide transition border border-brand bg-brand text-ink" data-filter="all">All Routes</button>
+          <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold tracking-wide transition border border-white/10 text-slate-400 hover:text-white" data-filter="outstation">Outstation</button>
+          <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold tracking-wide transition border border-white/10 text-slate-400 hover:text-white" data-filter="pilgrimage">Pilgrimage</button>
+          <button class="filter-btn px-4 py-2 rounded-full text-xs font-bold tracking-wide transition border border-white/10 text-slate-400 hover:text-white" data-filter="airport">Airports</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ Routes Grid ═══ -->
+    <div id="routes-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Route Card: Rewa -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Rewa">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Rewa</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~50 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~1.25 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Rewa." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Bhopal -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Bhopal">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Bhopal</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~470 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~9.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Bhopal." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Indore -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Indore">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Indore</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~670 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~13.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Indore." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Ujjain -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Ujjain">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Ujjain</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~680 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~13.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Ujjain." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Pachmarhi -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Pachmarhi">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Pachmarhi</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~390 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~8.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Pachmarhi." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Sagar -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Sagar">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Sagar</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~280 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~5.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Sagar." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Katni -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Katni">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Katni</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~100 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~2 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Katni." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Nagpur -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Nagpur">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Nagpur</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~480 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~10 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Nagpur." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Lucknow -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Lucknow">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Lucknow</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~340 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~7.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Lucknow." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Kanpur -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Kanpur">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Kanpur</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~290 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~6.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Kanpur." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Delhi -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Delhi">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Delhi</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~700 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~13.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Delhi." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Gwalior -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Gwalior">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Gwalior</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~380 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~8 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Gwalior." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Orchha -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Orchha">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Orchha</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~320 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~6.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Orchha." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Jhansi -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Jhansi">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Jhansi</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~330 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~7 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Jhansi." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Singrauli -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Singrauli">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Singrauli</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~260 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~6 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Singrauli." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Sidhi -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Sidhi">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Sidhi</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~160 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~3.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Sidhi." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Shahdol -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="outstation" data-name="Shahdol">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand/10 text-brand border border-brand/20">Outstation</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Shahdol</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~165 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~4 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Shahdol." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Rewa Airport -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="airport" data-name="Rewa Airport">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Airport</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Rewa Airport</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~55 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~1.25 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Rewa%20Airport." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Khajuraho Airport -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="airport" data-name="Khajuraho Airport">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Airport</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Khajuraho Airport</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~115 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~2.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Khajuraho%20Airport." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Mahakaleshwar -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="pilgrimage" data-name="Mahakaleshwar Ujjain">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">Pilgrimage</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Mahakaleshwar</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~680 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~13.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Mahakaleshwar." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Omkareshwar -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="pilgrimage" data-name="Omkareshwar">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">Pilgrimage</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Omkareshwar</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~680 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~13.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Omkareshwar." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Chitrakoot Dham -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="pilgrimage" data-name="Chitrakoot Dham">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">Pilgrimage</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Chitrakoot Dham</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~78 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~2 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Chitrakoot%20Dham." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Ayodhya Dham -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="pilgrimage" data-name="Ayodhya Dham">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">Pilgrimage</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Ayodhya Dham</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~330 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~7.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Ayodhya%20Dham." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Kashi Vishwanath -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="pilgrimage" data-name="Kashi Vishwanath Varanasi Banaras">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">Pilgrimage</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Kashi Vishwanath</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~310 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~7 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Kashi%20Vishwanath." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Prayagraj Sangam -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="pilgrimage" data-name="Prayagraj Sangam Allahabad">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">Pilgrimage</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Prayagraj Sangam</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~180 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~4.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Prayagraj%20Sangam." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Maihar Sharda Mata -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="pilgrimage" data-name="Maihar Sharda Mata Devi">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">Pilgrimage</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Maihar Sharda Mata</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~45 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~1 Hour</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Maihar%20Sharda%20Mata." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+      <!-- Route Card: Amarkantak -->
+      <div class="route-card glass group p-6 sm:p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition duration-500 flex flex-col justify-between" data-category="pilgrimage" data-name="Amarkantak Narmada">
+        <div>
+          <div class="flex justify-between items-start mb-4">
+            <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">Pilgrimage</span>
+            <span class="flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span> Ready
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold font-heading text-mist mb-4">Satna <span class="text-brand">➔</span> Amarkantak</h3>
+          <div class="space-y-2 text-slate-400 text-sm mb-6">
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1 111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>Distance: ~260 KM</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Est. Time: ~6.5 Hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4 border-t border-white/5">
+          <a href="https://api.whatsapp.com/send?phone=9174753164&text=Hi%20ShriRam%20Taxi%20Services%2C%20I%20want%20to%20book%20a%20cab%20from%20Satna%20to%20Amarkantak." target="_blank" rel="noreferrer" class="block w-full text-center bg-white/5 text-mist font-bold py-3 rounded-full hover:bg-brand hover:text-ink transition duration-300">Book Taxi</a>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- ═══ No Results State ═══ -->
+    <div id="no-results" class="hidden text-center py-16">
+      <svg class="mx-auto h-12 w-12 text-slate-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <h3 class="text-xl font-bold text-slate-400">No Routes Found</h3>
+      <p class="text-slate-500 mt-2">Try adjusting your search keywords or filter category.</p>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/5 bg-slate-950/80 py-10 sm:py-16 text-center px-5">
+    <h2 class="font-heading text-xl sm:text-2xl font-extrabold text-brand mb-3">ShriRam Taxi Services</h2>
+    <p class="text-slate-500 text-xs sm:text-sm mb-6">Satna, Madhya Pradesh &bull; Available 24/7</p>
+    <div class="flex flex-wrap justify-center gap-5 sm:gap-8 text-sm mb-6">
+      <a href="index.html" class="text-slate-400 hover:text-white transition">Home</a>
+      <a href="about.html" class="text-slate-400 hover:text-white transition">About</a>
+      <a href="fleet.html" class="text-slate-400 hover:text-white transition">Fleet</a>
+      <a href="destinations.html" class="text-slate-400 hover:text-white transition">Destinations</a>
+      <a href="routes.html" class="text-slate-400 hover:text-white transition">Routes</a>
+      <a href="contact.html" class="text-slate-400 hover:text-white transition">Contact</a>
+    </div>
+    <p class="text-slate-600 text-xs">&copy; 2024 ShriRam Taxi Services. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('route-search');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const routeCards = document.querySelectorAll('.route-card');
+      const noResults = document.getElementById('no-results');
+
+      function filterRoutes() {
+        const query = searchInput.value.toLowerCase().trim();
+        const activeTab = document.querySelector('.filter-btn.active-filter').dataset.filter;
+        let visibleCount = 0;
+
+        routeCards.forEach(card => {
+          const name = card.dataset.name.toLowerCase();
+          const category = card.dataset.category;
+
+          const matchesSearch = name.includes(query);
+          const matchesCategory = activeTab === 'all' || category === activeTab;
+
+          if (matchesSearch && matchesCategory) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+
+      searchInput.addEventListener('input', filterRoutes);
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('active-filter', 'bg-brand', 'text-ink', 'border-brand');
+            b.classList.add('border-white/10', 'text-slate-400', 'hover:text-white');
+          });
+          btn.classList.add('active-filter', 'bg-brand', 'text-ink', 'border-brand');
+          btn.classList.remove('border-white/10', 'text-slate-400', 'hover:text-white');
+          filterRoutes();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
